@@ -3,11 +3,13 @@ import styles from "./ProductDetails.module.css";
 import Header from "../Header/Header";
 import {FRONTEND_URL} from '../../utils/utils'
 import axios from 'axios'
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 function ProductDetails() {
 
     const {id}=useParams()
+
+    const navigate=useNavigate()
 
    const [data,setData]=useState({});
 
@@ -48,7 +50,7 @@ function ProductDetails() {
             <p className={styles.price}>${data.price}</p>
             <p className={styles.product_description}>{data.productDescription}</p>
             <p className={styles.department}>Department: {data.department}</p>
-            <button className={styles.edit_button}>Edit Product</button>
+            <button className={styles.edit_button} onClick={()=>navigate(`/edit/product/${id}`)}>Edit Product</button>
           </div>
         </div>
       </div>

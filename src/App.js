@@ -7,6 +7,7 @@ import Dashboard from './Components/Dashboard/Dashboard';
 import { useEffect, useState } from 'react';
 import {UserContext} from './contexts/UserContext'
 import ProductDetails from './Components/ProductDetails/ProductDetails';
+import EditProduct from './Components/EditProduct/EditProduct';
 
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
     <Route path="/register" element={<Register />} />
     <Route path="/login" element={<Login/>}/>
     <Route path="/product/:id" element={<ProductDetails/>}/>
+    <Route path="edit/product/:id" element={<EditProduct/>}/>
     </Routes>
     </UserContext.Provider>
     </>
