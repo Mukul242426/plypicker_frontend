@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext,useEffect,useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from './Header.module.css'
 import { UserContext } from "../../contexts/UserContext";
@@ -9,6 +9,17 @@ function Header() {
 
   const navigate = useNavigate();
   const {isLoggedIn,setIsLoggedIn}=useContext(UserContext)
+  const [role,setRole]=useState('')
+
+  useEffect(()=>{
+    if(localStorage.getItem('token')){
+      setRole(JSON.parse(localStorage.getItem('role')))
+    }
+    else
+    {
+      setRole('')
+    }
+  },[])
 
   const handleLogout = () => {
     localStorage.removeItem('token');
@@ -33,10 +44,11 @@ function Header() {
       </div>
       {/* <div className='buttons'style={{display:session?'flex':'none'}}> */}
       <div className={styles.buttons} style={{display:isLoggedIn?'flex':'none'}}>
+        <div className={styles.pending_reviews} style={{display:role==="admin"?'flex':'none'}} onClick={()=>navigate('/pending-request')}>Pending Reviews</div>
+        <div className={styles.profile} onClick={()=>navigate("/profile")}>My Profile</div>
         <div className={styles.logout_button} onClick={handleLogout}>
           Logout
         </div>
-        <div className={styles.profile} onClick={()=>navigate("/profile")}>My Profile</div>
       </div>
     </div>
   );

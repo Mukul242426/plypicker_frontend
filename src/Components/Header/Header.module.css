@@ -63,7 +63,7 @@
   
   }
   
-  .logout_button{
+  .logout_button,.pending_reviews{
     color: #FFF;
   font-family: 'DM Sans';
   font-size: 1.325rem;

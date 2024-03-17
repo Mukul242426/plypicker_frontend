@@ -62,6 +62,7 @@ function EditProduct() {
       navigate("/");
     } catch (error) {
       console.log("error is",error);
+      toast.error(error.response.data.error.message)
     }
   };
 
