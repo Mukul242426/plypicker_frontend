@@ -17,7 +17,7 @@ export default function Register() {
   const [formData, setFormData] = useState({
     email: "",
     password: "",
-    role:"user"
+    role:"team member"
   });
 
   const [buttonText,setButtonText]=useState("Register")
@@ -78,7 +78,7 @@ export default function Register() {
             />
           </div>
           <div className={styles.option_box}>
-          {["user", "admin"].map((value, index) => (
+          {["team member", "admin"].map((value, index) => (
           <div key={index} className={styles.option_type}>
             <input
               type="radio"

@@ -16,7 +16,7 @@ function Login() {
   const [formData, setFormData] = useState({
     email: "",
     password: "",
-    role:"user"
+    role:"team member"
   });
 
   const handleChange = (e) => {
@@ -76,7 +76,7 @@ function Login() {
             />
           </div>
           <div className={styles.option_box}>
-          {["user", "admin"].map((value, index) => (
+          {["team member", "admin"].map((value, index) => (
           <div key={index} className={styles.option_type}>
             <input
               type="radio"
