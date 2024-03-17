@@ -1,0 +1,60 @@
+  .analytics {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    overflow: auto;
+  }
+  
+  .analysis_box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4rem;
+  }
+  
+  .title {
+    color: #5076ff;
+    font-family: "Poppins";
+    font-size: 2.5rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    margin-top: 3rem;
+  }
+  
+  .analysis_table {
+    border-collapse: collapse;
+  }
+  
+  .table_heading {
+    background-color: #5076ff;
+    color: white;
+  }
+  
+  
+  .table_heading > th {
+    padding: 0.25rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    color: #fff;
+    font-family: "Poppins";
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 2.5rem;
+  }
+  
+  .product_analysis > td {
+    padding: 0.5rem;
+    /* padding-top: 0.25rem; */
+    /* text-align: center; */
+    color: white;
+    font-family: "Poppins";
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 40px;
+    background-color: #b3c4ff;
+
+  }
+

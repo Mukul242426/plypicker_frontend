@@ -44,7 +44,7 @@ function Header() {
       </div>
       {/* <div className='buttons'style={{display:session?'flex':'none'}}> */}
       <div className={styles.buttons} style={{display:isLoggedIn?'flex':'none'}}>
-        <div className={styles.pending_reviews} style={{display:role==="admin"?'flex':'none'}} onClick={()=>navigate('/pending-request')}>Pending Reviews</div>
+        <div className={styles.pending_reviews} style={{display:role==="team member"?'flex':'none'}} onClick={()=>navigate('/profile/my-submissions')}>My Submissions</div>
         <div className={styles.profile} onClick={()=>navigate("/profile")}>My Profile</div>
         <div className={styles.logout_button} onClick={handleLogout}>
           Logout
