@@ -10,7 +10,7 @@ import ProductDetails from './Components/ProductDetails/ProductDetails';
 import EditProduct from './Components/EditProduct/EditProduct';
 import MySubmissions from './Components/MySubmissions/MySubmissions';
 import Profile from './Components/Profile/Profile'
-
+import Pending from './Components/Pending/Pending';
 
 function App() {
 
@@ -35,6 +35,7 @@ function App() {
     <Route path="/edit/product/:id" element={<EditProduct/>}/>
     <Route path="/profile" element={<Profile/>}/>
     <Route path="/profile/my-submissions" element={<MySubmissions/>}/>
+    <Route path="/pending-requests" element={<Pending/>}/>
     </Routes>
     </UserContext.Provider>
     </>

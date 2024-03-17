@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState ,useEffect} from 'react'
 import styles from './Profile.module.css'
 import axios from 'axios'
 import { FRONTEND_URL } from '../../utils/utils'
@@ -9,13 +9,23 @@ export default function Profile() {
 
     useEffect(()=>{
       const fetchData=async()=>{
-        const response=await axios.get(`${FRONTEND_URL}/review/profile`,{
-          header:{
-            "Content-Type":"application/json",
-            Authorization:`Bearer ${jwttoken}`
-          }
-        })
+
+        const jwttoken=JSON.parse(localStorage.getItem('token'))
+
+        try{
+          const response=await axios.get(`${FRONTEND_URL}/review/profile`,{
+            headers:{
+              "Content-Type":"application/json",
+              Authorization:`Bearer ${jwttoken}`
+            }
+          })
+          console.log(response)
+          setData(response.data)
+        }catch(error){
+          console.log(error)
+        }
       }
+      fetchData()
     },[])
 
   return (
@@ -32,9 +42,9 @@ export default function Profile() {
           </thead>
           <tbody>
             <tr className={styles.product_analysis}>
-            <td>{data?.pending?.length ? data?.pending:0}</td>
-            <td>{data?.approved?.length ? data?.approved:0}</td>
-            <td>{data?.rejected?.length ? data?.rejected:0}</td>
+            <td>{data?.pending && data?.pending}</td>
+            <td>{data?.approved && data?.approved}</td>
+            <td>{data?.rejected && data?.rejected}</td>
             </tr>
           </tbody>
         </table>
