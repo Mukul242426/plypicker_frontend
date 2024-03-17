@@ -1,0 +1,12 @@
+.product {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  overflow: auto;
+}
+
+.container_1{
+    width: 100%;
+}

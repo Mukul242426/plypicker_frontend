@@ -1,0 +1,40 @@
+.card {
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+  
+  .card img {
+    width: 100%;
+    border-radius: 5px;
+  }
+  
+  .card_content {
+    padding: 10px 0;
+  }
+  
+  .card_content h3 {
+    margin: 0;
+    font-size: 18px;
+    color: #333;
+  }
+  
+  .card_content p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #666;
+  }
+  
+  .price {
+    font-weight: bold;
+  }
+  
+  .department {
+    color: #888;
+    font-style: italic;
+  }
+  

@@ -1,4 +1,4 @@
-import React, {useState } from "react";
+import React, {useContext, useState } from "react";
 import styles from "./Register.module.css";
 import { Link } from "react-router-dom";
 import image from '../../assets/image1.png'
@@ -6,11 +6,13 @@ import toast from "react-hot-toast";
 import axios from 'axios';
 import { FRONTEND_URL } from "../../utils/utils";
 import { useNavigate } from "react-router-dom";
+import { UserContext } from "../../contexts/UserContext";
 
 
 export default function Register() {
 
   const navigate=useNavigate();
+  const {setIsLoggedIn}=useContext(UserContext)
 
   const [formData, setFormData] = useState({
     email: "",
@@ -36,8 +38,10 @@ export default function Register() {
     try {
       const response = await axios.post(`${FRONTEND_URL}/register`, formData);
       localStorage.setItem("token", JSON.stringify(response.data.jwtToken));
+      localStorage.setItem("role",JSON.stringify(response.data.role))
+      setIsLoggedIn(true)
       toast.success(response.data.message);
-      navigate("/dashboard");
+      navigate("/");
     } catch (error) {
       console.log(error);
       toast.error(error.response.data.error.message);
