@@ -1,1 +1,1 @@
-export const FRONTEND_URL="http://localhost:4000/api/v1"
+export const FRONTEND_URL="https://shopify-wyw6.onrender.com/api/v1"
