@@ -19,6 +19,9 @@ function Login() {
     role:"team member"
   });
 
+  const [loading,setLoading]=useState(false);
+  const [buttonText,setButtonText]=useState("Login")
+
   const handleChange = (e) => {
     const { name, value } = e.target;
 
@@ -31,6 +34,7 @@ function Login() {
   
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true)
 
     try {
       const response = await axios.post(`${FRONTEND_URL}/login`, formData);
@@ -42,6 +46,8 @@ function Login() {
     } catch (error) {
       console.log(error);
       toast.error(error.response.data.error.message);
+    } finally{
+      setLoading(false)
     }    
     console.log(formData)
 
@@ -94,7 +100,7 @@ function Login() {
           <div className={styles.box_1}>
             <div className={styles.buttonBox}>
               <button className={styles.create_btn} onClick={handleSubmit}>
-                Login
+               {loading ? "Loading..." : buttonText}
               </button>
             </div>
             <div className={styles.txt_msg}>
@@ -107,7 +113,6 @@ function Login() {
         </form>
       </div>
       <div className={styles.right}>
-        {/* <div className={styles.randomText}>Your Personal Job Finder</div> */}
         <img src={image} className={styles.default} alt="default" />
       </div>
     </div>
