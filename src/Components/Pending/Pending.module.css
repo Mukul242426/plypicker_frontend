@@ -1,8 +1,10 @@
 .analytics {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    overflow: auto;
+  height: 100vh;
+  overflow: auto;
+  padding-bottom: 1.5rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  width: 100%;
   }
   
   .analysis_box {
@@ -45,7 +47,7 @@
   }
   
   .product_analysis > td {
-    padding: 0.5rem;
+    padding: 0.75rem;
     /* padding-top: 0.25rem; */
     /* text-align: center; */
     color: white;
@@ -58,3 +60,12 @@
 
   }
 
+  .review{
+    padding: 1.5px 15px;
+    background-color: #ed5353;
+    color: #fff;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    font-size: 18px;
+  }

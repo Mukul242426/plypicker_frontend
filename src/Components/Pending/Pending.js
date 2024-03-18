@@ -2,8 +2,12 @@ import React, { useEffect, useState } from "react";
 import styles from "./Pending.module.css";
 import axios from "axios";
 import { FRONTEND_URL } from "../../utils/utils";
+import { useNavigate } from "react-router-dom";
 
 function Pending() {
+
+  const navigate=useNavigate();
+
   const [data, setData] = useState([]);
 
   useEffect(() => {
@@ -39,7 +43,7 @@ function Pending() {
               <th>Pending Requests</th>
               <th>Team Members email</th>
               <th>Product's Name</th>
-              <th>Fields to be edited</th>
+              <th>Review Request</th>
             </tr>
           </thead>
           <tbody>
@@ -49,9 +53,7 @@ function Pending() {
                 <td>{ele.authorsMail}</td>
                 <td>{ele.productName}</td>
                 <td>
-                  {Object.keys(ele.suggestedChanges).map((key, idx) => (
-                    <li key={idx}>{key}</li>
-                  ))}
+                  <button className={styles.review} onClick={()=>navigate(`/pending-requests/${ele._id}`)}>Review</button>
                 </td>
               </tr>
             ))}

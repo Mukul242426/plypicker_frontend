@@ -1,0 +1,58 @@
+.pending_req {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+  }
+  
+  .pending_req h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .pending_req p {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  
+  .pending_req h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .pending_req ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .pending_req ul li {
+    font-size: 16px;
+    margin-bottom: 5px;
+  }
+  
+  .buttons {
+    margin-top: 20px;
+  }
+  
+  .approve,
+  .reject {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 10px;
+  }
+  
+  .reject {
+    background-color: #dc3545;
+  }
+  
+  .approve:hover,
+  .reject:hover {
+    opacity: 0.8;
+  }
+  
