@@ -18,14 +18,14 @@ function Header() {
     else
     {
       setRole('')
+      navigate('/')
     }
-  },[])
+  },[isLoggedIn])
 
   const handleLogout = () => {
     localStorage.removeItem('token');
     setIsLoggedIn(false)
     toast.success("Logged Out Successfully")
-
   };
 
   return (
